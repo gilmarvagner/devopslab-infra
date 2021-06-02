@@ -5,7 +5,7 @@ resource "google_compute_instance" "firstvm" {
   zone         = "us-central1-c"
 
   # Insira essa linha após zone
-      tags = ["labdevops"]
+  tags = ["labdevops"]
 
   # Defini a Imagem da VM
   boot_disk {
@@ -23,8 +23,8 @@ resource "google_compute_instance" "firstvm" {
     // A presença do bloco access_config, mesmo sem argumentos, garante que a instância estará acessível pela internet.
   }
 }
-  # Retorna o IP da VM criada 
-  output "ip" {
-	value = google_compute_instance.firstvm.network_interface.0.access_config.0.nat_ip 
-  }
+# Retorna o IP da VM criada 
+output "ip" {
+  value = google_compute_instance.firstvm.network_interface.0.access_config.0.nat_ip
+}
 
